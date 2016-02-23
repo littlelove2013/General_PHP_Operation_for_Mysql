@@ -7,12 +7,6 @@
 	 *
 	 */
 //引用配置文件
-	if(!defined('DB_CONFIG')){
-		exit('Access Denied');
-	}
-	if(!defined(GC_CONFIG_PATH)){
-		define('GC_CONFIG_PATH',DISCUZ_ROOT."config");
-	}
 	//echo "GC_CONFIG_PATH:".GC_CONFIG_PATH."<br/>";
 	class GCDB{
 		public $mysqli;
@@ -33,7 +27,7 @@
 				//echo realpath($path);
 				//echo $gc_path."\\config_global.php";
 				//如果配置为空，则查找配置文件
-				include("./config_global.php");
+				include("./Conf/config_database.php");
 				//print_r($_config);
 				if(!empty($_config)){
 					$this->db_config=$_config['db']['1'];
